@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+
+<style>
+    .logo {
+        height: 65px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: black;
+    }
+
+    #search {
+        border: none;
+        border-radius: 14px;
+        box-shadow: 2px 2px 2px 0px #00000029;
+        background-color: #EFF2FC;
+        padding-left: 30px;
+    }
+
+    .search {
+        position: absolute;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .welcome-banner {
+        min-height: 600px;
+        background-image: url('/images/banners/banner.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top right;
+    }
+
+    .spcl-gradient-1,
+    #myTab .active {
+        background: linear-gradient(252.86deg, #131CFF 9.88%, #963ADE 92.38%);
+    }
+
+    .bg-1 {
+        background-color: #E6E8F6;
+    }
+
+    .bg-2 {
+        background-color: #F7F8FF;
+    }
+
+    .my-50 {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .my-100 {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .px-50 {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .px-100 {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .py-50 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .py-100 {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .di-card {
+        border-radius: 13px;
+        background: linear-gradient(178.9deg, rgba(255, 255, 255, 0) 0.94%, rgba(0, 0, 0, 0.92) 99.09%, rgba(196, 196, 196, 0) 99.1%);
+    }
+
+    .card-img {
+        border-radius: 13px;
+        z-index: -1;
+    }
+
+    .di-usecase li {
+        line-height: 2.2rem;
+    }
+
+    .img-responsive {
+        max-width: inherit;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    /* 
+    .pointer {
+        cursor: pointer;
+    } */
+
+    .card-body a {
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .card-2 {
+        min-height: 393px;
+    }
+
+    .card-2,
+    .card-2 .card-body {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .card-2 .card-body {
+        background-color: #E8EBFA;
+    }
+
+    .card-2 img {
+        max-height: 175px;
+    }
+
+    .text-justify {
+        text-align: justify;
+    }
+
+    .text-heading-1 {
+        color: #3A3FA6;
+    }
+
+    .card-3 {
+        border-radius: 39px;
+        background: transparent;
+    }
+
+    .icon-info {
+        position: absolute;
+        margin-top: -10px;
+        font-size: 0.75rem;
+    }
+
+    .card-4 {
+        max-width: 350px;
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .card-4 .text-heading-1 {
+        margin-top: auto;
+    }
+
+    .use-case li {
+        line-height: 3rem;
+        margin-left: 4rem;
+    }
+
+    .use-case li::before {
+        width: 2em;
+    }
+
+    .use-case ul {
+        list-style-image: url('/images/shapes/rectangle_bullet.svg');
+    }
+
+    .ml-4 {
+        margin-left: 1.5rem;
+    }
+
+    #myTab .active {
+        color: white;
+        border-radius: 23px;
+    }
+
+    #myTabContent {
+        text-align: justify;
+    }
+
+    footer a {
+        color: #0000009C;
+        text-decoration: none;
+        display: block;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/images/logo/ecoin.png" class="img-responsive logo" alt="Ecoin">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Use Ecoin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Beginners Guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Whitepaper</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Team</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a class="nav-link mx-1 text-dark" href="#">Login</a>
+                    <a class="btn spcl-gradient-1 text-light mx-1" href="#">Register</a>
+                    <span>
+                        <img class="search" src="/images/icons/magnify_glass.svg" alt="">
+                    </span>
+                    <input id="search" class="form-control mx-1" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="welcome-banner"></div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-6 col-md-2 mx-1 my-2">
+                <img src="/images/logo/ecoin.png" style="max-width: inherit;" class="img-responsive" alt="Ecoin">
+            </div>
+        </div>
+        <div class="row justify-content-center py-50">
+            <h1 class="text-center my-2">Welcome to Ecoin</h1>
+            <div class="col-md-6 my-2 text-center">
+                <p>
+                    Ecoin token was created to improve society through Social Mining and introduce financial inclusion
+                    to
+                    millions of people. Our vision is to enable mass adoption by creating an incredibly user friendly
+                    Experience at Ecoin that will be win-win for all people, companies and society.
+                </p>
+                <a href="#" class="btn spcl-gradient-1 text-light px-5">Explore</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="row px-50 py-100 bg-1">
+        <div class="col-md-6 px-50">
+            <h1>Get Started</h1>
+            <p><b>Ecoinofficial.org</b> is your portal into the world of Ecoin. Social mining technology is new and
+                ever-evolving – it helps to have a guide and to start.</p>
+        </div>
+        <div class="col-md-6 px-50 text-center">
+            <a href="#" class="btn btn-lg text-light spcl-gradient-1 px-100">Get Started</a>
+        </div>
+    </div>
+
+    <section class="px-50 py-50">
+        <div class="row mb-4">
+            <h1>Blockchain based Digital Identity</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-white di-card">
+                    <img src="/images/cards/dig_identity_1.jpeg" class="card-img" alt="Digital Identity">
+                    <div class="card-img-overlay d-flex" style="align-items: flex-end;">
+                        <p class="card-text">Blockchain has revolutionized the world of finance, now its time to for
+                            <span class="h5">“Digital Identity”</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-white di-card">
+                    <img src="/images/cards/dig_identity_2.jpeg" class="card-img" alt="Digital Identity">
+                    <div class="card-img-overlay d-flex" style="align-items: flex-end;">
+                        <p class="card-text"><span class="h5">“Digital Identity”</span> on blockchain proves the
+                            difference between
+                            a real user and a bot</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-white di-card">
+                    <img src="/images/cards/dig_identity_3.jpeg" class="card-img" alt="Digital Identity">
+                    <div class="card-img-overlay d-flex" style="align-items: flex-end;">
+                        <p class="card-text">Ecoin's Blockchain based <span class="h5">“Digital Identity”</span> can
+                            revolutionize
+                            how many businesses and organisations interact with users</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-white di-card">
+                    <img src="/images/cards/dig_identity_4.jpeg" class="card-img" alt="Digital Identity">
+                    <div class="card-img-overlay d-flex" style="align-items: flex-end;">
+                        <p class="card-text">Users control their <span class="h5">“Digital Identity”</span> right on
+                            their Phone
+                            without risk of any third parties controlling it</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-50 py-50">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/images/cards/dig_identity_5.png" class="img-responsive" alt="Digital Identity">
+            </div>
+            <div class="col-md-6">
+                <h1 class="mb-5">
+                    Digital Identity use cases
+                </h1>
+                <ul class="di-usecase">
+                    <li>Future rewarded marketing</li>
+                    <li>Whitelisting for kyc providers</li>
+                    <li>Surveys</li>
+                    <li>Free special unlocks on games</li>
+                    <li>Ecoin sign in</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-50 py-50">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-2 mb-3">
+                    <img src="/images/cards/dig_identity_6.jpeg" class="card-img-top" alt="Incentivized Mining">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Start with Incentivized Mining</h5>
+                        <p class="card-text">Get started with the world of Ecoin with our incentivized mining technique.
+                            Sign up and get proof of Identity and Introduction to receive some Ecoin that will be used
+                            for Staking and other activities just like a NEO BLOCKCHAIN BANK.</p>
+                        <p class="card-text text-right"><a href="#">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-2 mb-3">
+                    <img src="/images/cards/dig_identity_7.jpeg" class="card-img-top" alt="Incentivized Mining">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">The World of Social Mining</h5>
+                        <p class="card-text">Ecoin Social Mining is for those who love to invest time instead of risking
+                            hard earned money. Here our Fully validated users Earn Ecoin by participating in various
+                            free offers listed by our partners.</p>
+                        <p class="card-text text-right"><a href="#">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-2 mb-3">
+                    <img src="/images/cards/dig_identity_8.jpeg" class="card-img-top" alt="Incentivized Mining">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Your One Stop Destination for Cashback Mining</h5>
+                        <p class="card-text">Ecoin Cashback Mining is for people who love to complete their daily
+                            spending like shopping, mobile recharge etc. and get Ecoins as part of Cashback Mining.</p>
+                        <p class="card-text text-right"><a href="#">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-2 mb-3">
+                    <img src="/images/cards/dig_identity_9.jpeg" class="card-img-top" alt="Incentivized Mining">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">But crypto in no time</h5>
+                        <p class="card-text">Sign up with your Ecoin credentials and buy your favourite crypto without
+                            any KYC and get multiple benefits as well.</p>
+                        <p class="card-text text-right"><a href="#">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-2 mb-3">
+                    <img src="/images/cards/dig_identity_10.jpeg" class="card-img-top" alt="Incentivized Mining">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">You always need a Friendly Wallet</h5>
+                        <p class="card-text">Ecoin wallet is the official multi-coin wallet of Ecoin Foundation. You can
+                            send, receive and store Cryptocurrencies here along with different entertaining features.
+                        </p>
+                        <p class="card-text text-right"><a href="#">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-2 mb-3">
+                    <img src="/images/cards/dig_identity_11.jpeg" class="card-img-top" alt="Incentivized Mining">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Become the pioneer in Blockchain verification</h5>
+                        <p class="card-text">Start using a blockchain based authenticity provider for digital certific
+                        </p>
+                        <p class="card-text text-right"><a href="#">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-50 py-50">
+        <div class="row">
+            <div class="col-md-8">
+                <h3>A secondary social media that understands your need</h3>
+                <p>Wishoo powered by Ecoin is the only secondary social media platform that pays you to watch, enjoy and
+                    like interesting contents.
+                </p>
+                <br><br>
+                <h3>Ready to share something interesting?</h3>
+                <p>Ecoin is new in the world of democratic decentralization, we are always building something to empower
+                    our community.</p>
+            </div>
+            <div class="col-md-4 text-right">
+                <a href="#" class="btn btn-lg text-light spcl-gradient-1 px-100 mb-4">Subscribe</a>
+                <p>Subscribe the newsletter to stay updated…..</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-50 py-50 bg-2">
+        <div class="row mb-3">
+            <h1>What is Ecoin?</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <p class="text-justify">
+                    Ecoin is a token that has all the qualities of an asset just like USD, INR etc. which is turning all
+                    receivers and consumers into investors at the same time. Ecoin tokens can be mined by doing simple
+                    free tasks or participating in various daily activities like Shopping, Groceries, mobile recharge
+                    etc.
+                </p>
+                <br>
+                <p class="text-justify">The Ecoin ecosystem is designed in such a way that it’s price will always go up
+                    from full functional phase. The tokens are limited and the foundation will buy these Ecoins to
+                    supply cashback or rewards from the Fiat payment we get from B2B clients. This creates Network
+                    effect and Endowment effect for which 90% of our consumers never sold their Ecoins.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="/images/others/brand.png" loading="lazy" class="img-responsive" alt="Ecoin">
+            </div>
+        </div>
+    </section>
+
+    <section class="px-50 py-50">
+        <div class="row mb-2">
+            <h1>
+                What is The Coin Exchange?
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-5 my-2">
+                <img src="/images/cards/coin_exchange.jpeg" loading="lazy" class="img-responsive" alt="Ecoin"
+                    style="max-height: 35vh;">
+            </div>
+            <div class="col-md-7 my-2">
+                <p>
+                    The Coin Exchange is a P2P non-custodial exchange.
+                </p>
+                <p>
+                    Features: Innovative blockchain tracking driven security architecture.
+                </p>
+                <p>Non-custodial KYC free p2p exchange</p>
+                <p> NO risk of losing customer funds ever !</p>
+                <p>No hassle of KYC !</p>
+                <p> Easy user on-boarding integrated with wishoo / ecoin ecosystem</p>
+                <p>Previously vetted traders !</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-50 py-50" style="background-image: url(/images/illustrations/wave.png);">
+        <div class="row py-50">
+            <h1 class="text-heading-1 text-center">Why is Ecoin Unique ?</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-3 mx-3 my-2 h-100">
+                    <div class="card-body py-5">
+                        <h5 class="card-title">Strong Network Effects</h5>
+                        <br>
+                        <p class="card-text">Network Effect is a Numbers game
+                            As more people sign up, the value of Ecoin rises more. The more the value of ecoin, more
+                            people will sign up.
+                        </p>
+                        <a href="#" class="">Learn more Refer FAQ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-3 mx-3 my-2 h-100">
+                    <div class="card-body py-5">
+                        <h5 class="card-title">World's simplest crypto onboarding</h5>
+                        <br>
+                        <p class="card-text">
+                            Ecoin uses advanced AI to ensure smoothest onboarding while ensuring fraudsters are kept at
+                            bay
+                        </p>
+                        <p class="card-text">
+                            Yes this is our secret weapon
+                            Test it by creating junk emails / Phone nos. if you want to.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-3 mx-3 my-2 h-100">
+                    <div class="card-body py-5">
+                        <h5 class="card-title">The power of Endowment Effect</h5>
+                        <br>
+                        <p class="card-text">
+                            90% of the Ecoins issued were never sold by our community, that helps us to understand why
+                            Ecoin is valuable
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-50 py-50 bg-2">
+        <div class="row mb-4">
+            <h1>Powerful User-Friendly Features</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-3 col-lg-2 mx-1 my-2">
+                <div class="card mb-3">
+                    <img src="/images/cards/feature_1.jpeg" class="card-img-top" alt="Incentivized Mining">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Instant Transfers</h5>
+                        <p class="card-text">Users will be able to transfer their coins with other users for free right
+                            after sign up</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-2 mx-1 my-2">
+                <div class="card mb-3">
+                    <img src="/images/cards/feature_2.jpeg" class="card-img-top" alt="Incentivized Mining">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Interest on your earnings</h5>
+                        <p class="card-text">Users will be able to transfer their coins with other users for free right
+                            after sign up</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-2 mx-1 my-2">
+                <div class="card mb-3">
+                    <img src="/images/cards/feature_3.jpeg" class="card-img-top" alt="Incentivized Mining">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Additional earnings</h5>
+                        <p class="card-text">We have a variable interest rate system based on your savings. The more you
+                            save, the more interest you earn.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-2 mx-1 my-2">
+                <div class="card mb-3">
+                    <img src="/images/cards/feature_4.jpeg" class="card-img-top" alt="Incentivized Mining">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Withdraw when you need</h5>
+                        <p class="card-text">You can withdraw your coins to any TELOS wallet you want and operate
+                            independently</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-2 mx-1 my-2">
+                <div class="card mb-3">
+                    <img src="/images/cards/feature_1.jpeg" class="card-img-top" alt="Incentivized Mining">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">People friendly mining</h5>
+                        <p class="card-text">You mine Ecoins whenever you shop or complete daily tasks or even watching
+                            contents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-50 py-50">
+        <div class="row">
+            <h1> Ecoin Today </h1>
+            <p>Till date Ecoin community statistics:</p>
+        </div>
+        <br>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <div class="col d-flex justify-content-center">
+                <div class="card card-4 mb-3 p-2">
+                    <h3>ECOIN PRICE (USD)</h3>
+                    <p>The latest price for 1000 ecoins are $1.5</p>
+                    <p class="text-heading-1">
+                        <span class="h1">$0.0015/</span>&nbsp;Ecoin&nbsp;<span class="icon-info">&#9432;</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="card card-4 mb-3 p-2">
+                    <h3>TRANSACTIONS TODAY</h3>
+                    <p>The number of transactions successfully processed on the network in the last 24 hours.</p>
+                    <p class="text-heading-1">
+                        <span class="h1">$3000</span>&nbsp;<span class="icon-info">&#9432;</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="card card-4 mb-3 p-2">
+                    <h3>Total no of Ecoiners</h3>
+                    <p>Ecoin is powered by its community members called Ecoiners.</p>
+                    <p class="text-heading-1">
+                        <span class="h1">5,30,0000</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="card card-4 mb-3 p-2">
+                    <h3>Global Alexa Ranking</h3>
+                    <p>The latest price for 1000 ecoins are $1.5</p>
+                    <p class="text-heading-1">
+                        <span class="h1">25000</span>&nbsp;<span class="icon-info">&#9432;</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="card card-4 mb-3 p-2">
+                    <h3>Social shares</h3>
+                    <p>The number of transactions successfully processed on the network in the last 24 hours.</p>
+                    <p class="text-heading-1">
+                        <span class="h1">950k+</span>&nbsp;social shares till date
+                    </p>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="card card-4 mb-3 p-2">
+                    <h3>Value locked in Ecoinofficial.org</h3>
+                    <p>The total value locked at Ecoinofficial.org is</p>
+                    <p class="text-heading-1">
+                        <span class="h1">15million</span><br>
+                        <span>Ecoins</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-50 py-50">
+        <div class="row mb-4">
+            <h1>Ecoin use cases:</h1>
+        </div>
+        <div class="row use-case">
+            <div class="col-md-4">
+                <img src="/images/others/ecoin.png" class="img-responsive" style="max-height: 700px;" alt="">
+            </div>
+            <div class="col-md-8">
+                <ul>
+                    <li>User Adoption Network</li>
+                    <li>Tokenized cashback system</li>
+                    <li>Decentralized stablecoin for payment network</li>
+                    <li>Crowdfunding</li>
+                    <li>P-p Semi decentralized Exchange</li>
+                    <li>Multi-coin Crypto Wallet</li>
+                    <li>Multichain Network</li>
+                    <li>Blockchain based certificate verification</li>
+                </ul>
+                <span class="ml-4">Many more</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-50 py-50 bg-2">
+        <div class="row">
+            <div class="col-md-10 col-lg-8">
+                <ul class="nav mb-5" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="btn active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                            type="button" role="tab" aria-controls="home" aria-selected="true">Merchant
+                            Partnerships</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="btn" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                            type="button" role="tab" aria-controls="profile" aria-selected="false">Sign up Less
+                            On-boarding</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Ecoin
+                        plans to
+                        have deep merchant partnerships especially with the online merchants who suffer from high charge
+                        backs.
+                        There are millions of merchants who are desperately looking for alternatives to credit cards but
+                        can’t
+                        find one in cryptocurrency yet, as hardly any customers use crypto.</div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Sign up-less
+                        onboarding can help users’ experience crypto and pay in crypto to online merchants and websites
+                        without
+                        users ever signing up on ecoin previously. Sign-up less onboarding offers will set a new
+                        standard for
+                        user friendliness for crypto payment network.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-50 py-50" style="background-image: url('/images/banners/mobile.png');background-repeat: no-repeat;
+    background-size: cover;">
+        <div class="row" style="justify-content: flex-end;">
+            <div class="col-md-7 text-light">
+                <h1 class="mb-5 text-right">
+                    Ecoin based Stable Coin
+                </h1>
+                <p class="my-5 text-justify">
+                    Most merchants love cryptocurrency for the fact that it comes with no chargebacks and is
+                    extremely
+                    easy to
+                    start accepting payments, but volatility remains a pretty challenging aspect for using crypto.
+                    Pricing goods
+                    in a crypto that has 10% daily volatility and dealing with the funds is simply not affordable
+                    for
+                    most
+                    businesses. A stable coin can fix the volatility issue away completely providing much needed
+                    stability for
+                    businesses that want to accept blockchain based payments.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-50 py-50" style="background-color: black;">
+        <div class="text-light">
+            <h1 class="mb-5">The Ecoin Community</h1>
+            <h3>Ecoin is all about community.</h3>
+            <h3 class="mb-5">Please click on the links to see how you can interact with our members.</h3>
+            <h5>Main Telegram Group Your community Telegram Discord LinkedIn Twitter</h5>
+        </div>
+    </section>
+
+    <footer class="px-50 py-50">
+        <div class="row">
+            <div class="col-md-4 col-lg-2 my-2">
+                <h4>About Us</h4>
+                <div>
+                    <a href="">About</a>
+                    <a href="">Careers</a>
+                    <a href="">Business Contacts</a>
+                    <a href="">Community</a>
+                    <a href="">Ecoin Blog</a>
+                    <a href="">Terms</a>
+                    <a href="">Privacy</a>
+                    <a href="">Announcements</a>
+                    <a href="">News</a>
+                    <a href="">Notices</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 my-2">
+                <h4>Products</h4>
+                <div>
+                    <a href="">Exchange </a>
+                    <a href="">Academy</a>
+                    <a href="">BCF</a>
+                    <a href="">Card</a>
+                    <a href="">Labs</a>
+                    <a href="">Launchpad</a>
+                    <a href="">Research</a>
+                    <a href="">Trust Wallet</a>
+                    <a href="">NFT</a>
+                    <a href="">Featured market</a>
+                    <a href="">Ecoin Pay</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 my-2">
+                <h4>Service</h4>
+                <div>
+                    <a href="">Downloads </a>
+                    <a href="">Desktop Application</a>
+                    <a href="">Buy Crypto</a>
+                    <a href="">Fees </a>
+                    <a href="">Institutional Services</a>
+                    <a href="">Referral</a>
+                    <a href="">BNB</a>
+                    <a href="">OTC Trading</a>
+                    <a href="">Listing Application </a>
+                    <a href="">Fiat Gateway Application</a>
+                    <a href="">Trading Rules</a>
+                    <a href="">P2P Merchant Application</a>
+                    <a href="">Historical Market Data</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 my-2">
+                <h4>Support</h4>
+                <div>
+                    <a href="">Give Us Feedback </a>
+                    <a href="">Support Center</a>
+                    <a href="">Submit a request</a>
+                    <a href="">API Documentation </a>
+                    <a href="">Ecoin Verify</a>
+                    <a href="">Law Enforcement Requests</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 my-2">
+                <h4>Learn</h4>
+                <div>
+                    <a href="">Buy BNB</a>
+                    <a href="">Buy BUSD</a>
+                    <a href="">Buy Bitcoin</a>
+                    <a href="">Buy Ethereum</a>
+                    <a href="">Buy Litecoin</a>
+                    <a href="">Buy Ripple</a>
+                    <a href="">Buy Bitcoin Cash</a>
+                    <a href="">Buy Dogecoin</a>
+                    <a href="">Buy DeFi</a>
+                    <a href="">Buy SHIB</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 my-2">
+                <h4>Community</h4>
+                <div>
+                    <a href="" target="_blank">
+                        <img src="/images/logo/telegram.svg" alt="Telegram">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

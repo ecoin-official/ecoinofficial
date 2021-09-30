@@ -45,6 +45,10 @@
         background: linear-gradient(252.86deg, #131CFF 9.88%, #963ADE 92.38%);
     }
 
+    .spcl-gradient-1.btn {
+        box-shadow: 0px 4px 8px 0px #0000001F;
+    }
+
     .bg-1 {
         background-color: #E6E8F6;
     }
@@ -83,6 +87,19 @@
         padding-bottom: 100px;
     }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        color: #000000AB;
+
+    }
+
+    p {
+        color: #0000009C;
+    }
+
     .di-card {
         border-radius: 13px;
         background: linear-gradient(178.9deg, rgba(255, 255, 255, 0) 0.94%, rgba(0, 0, 0, 0.92) 99.09%, rgba(196, 196, 196, 0) 99.1%);
@@ -95,6 +112,8 @@
 
     .di-usecase li {
         line-height: 2.2rem;
+        color: #0000009C;
+        font-weight: bold;
     }
 
     .img-responsive {
@@ -117,6 +136,7 @@
 
     .card-2 {
         min-height: 393px;
+        box-shadow: 0px 4px 4px 0px #00000040;
     }
 
     .card-2,
@@ -131,6 +151,14 @@
 
     .card-2 img {
         max-height: 175px;
+    }
+
+    .card-2 h5 {
+        color: #00000085;
+    }
+
+    .card-2 a {
+        color: #3A3FA6;
     }
 
     .text-justify {
@@ -192,6 +220,17 @@
         color: #0000009C;
         text-decoration: none;
         display: block;
+    }
+
+    .forefinger-tap {
+        max-width: 150px;
+        position: absolute;
+    }
+
+    @media screen and (max-width: 482px) {
+        .forefinger-tap {
+            /* top: 30px; */
+        }
     }
 </style>
 
@@ -260,7 +299,9 @@
                 ever-evolving – it helps to have a guide and to start.</p>
         </div>
         <div class="col-md-6 px-50 text-center">
-            <a href="#" class="btn btn-lg text-light spcl-gradient-1 px-100">Get Started</a>
+            <a href="#" class="btn btn-lg text-light spcl-gradient-1 px-100" style="position: relative;">Get Started
+                <img class="forefinger-tap" src="/images/icons/Forefinger_Tap.svg" alt="tap">
+            </a>
         </div>
     </div>
 
@@ -334,7 +375,7 @@
     <section class="px-50 py-50">
         <div class="row">
             <div class="col-md-4">
-                <div class="card card-2 mb-3">
+                <div class="card card-2 mb-5">
                     <img src="/images/cards/dig_identity_6.jpeg" class="card-img-top" alt="Incentivized Mining">
                     <div class="card-body">
                         <h5 class="card-title mb-4">Start with Incentivized Mining</h5>
@@ -476,7 +517,22 @@
         </div>
     </section>
 
-    <section class="px-50 py-50" style="background-image: url(/images/illustrations/wave.png);">
+    <style>
+        .section-unique {
+            background: url(/images/illustrations/wave.png) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .section-unique .card {
+            box-shadow: 0px 4px 4px 0px #00000040;
+            background: #FFFFFFB2;
+        }
+    </style>
+
+    <section class="px-50 py-50 section-unique">
         <div class="row py-50">
             <h1 class="text-heading-1 text-center">Why is Ecoin Unique ?</h1>
         </div>
